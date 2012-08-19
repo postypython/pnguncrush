@@ -1,7 +1,8 @@
 pnguncrush
 ==========
 
-Revert Apple png optimization used to create .ipa packages. Uncrushed file does not keep multiple IDAT chunks.
+Reverts Apple PNG optimization used to create .ipa packages.
+Uncrushed file does not contains multiple IDAT chunks. It is a basic PNG image structured as follows: IHDR, IDAT, IEND;
 
 Sampe Usage
 ===========
