@@ -120,7 +120,22 @@ class PPngUncrush {
 		$out .= pack('N', $chunks[1]['crc']);
 		
 		// data stream
-		$compressed = gzcompress($uncompressed);			
+		$newData = '';
+		for ($y=0; $y < $height; $y++) {
+		        $i = strlen($newData); // setting the offset
+		        $newData .= $uncompressed[$i]; // inject the first pixel, don't know why...
+				for ($x=0; $x < $width; $x++) {
+				         $i = strlen($newData); // setting the offset
+		            // Now we need to swap the BGRA to RGBA
+					$newData .= $uncompressed[$i+2]; // Place the Red pixel
+					$newData .= $uncompressed[$i+1]; // Place the Green pixel
+					$newData .= $uncompressed[$i+0]; // Place the Blue pixel
+					$newData .= $uncompressed[$i+3]; // Place the Aplha byte
+				 }
+				
+         }
+				
+		$compressed = gzcompress($newData);			
 		$out .= pack('N', strlen($compressed));
 		$out .= 'IDAT';
         $out .= $compressed;
