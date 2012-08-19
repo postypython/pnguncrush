@@ -6,7 +6,7 @@ Uncrushed file does not contains multiple IDAT chunks. It is a basic PNG image s
 Based on peperzaken procedure: https://github.com/peperzaken/iPhone-optimized-PNG-reverse-script
 
 Sample Usage
-===========
+------------
 
 1) Conversion to string:
 
