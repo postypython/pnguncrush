@@ -15,7 +15,7 @@ Sample Usage
 	$img = $decoder->decodeTo(PPngUncrush::DECODE_TO_STRING);
 	
 
-### Conversion to file
+### Conversion to file:
 
 	$decoder = new PPngUncrush('/path/to/source/crushed.png');
 
