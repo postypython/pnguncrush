@@ -8,14 +8,14 @@ Based on peperzaken procedure: https://github.com/peperzaken/iPhone-optimized-PN
 Sample Usage
 ------------
 
-###Conversion to string:
+### Conversion to string:
 
 	$decoder = new PPngUncrush('/tmp/crushed.png');
 
 	$img = $decoder->decodeTo(PPngUncrush::DECODE_TO_STRING);
 	
 
-###Conversion to file
+### Conversion to file
 
 	$decoder = new PPngUncrush('/path/to/source/crushed.png');
 
