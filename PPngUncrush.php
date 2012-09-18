@@ -139,12 +139,12 @@ class PPngUncrush {
 		$out .= pack('N', strlen($compressed));
 		$out .= 'IDAT';
         $out .= $compressed;
-		$out .= pack('N', 'IDAT' . crc32($compressed));
+		$out .= pack('N', crc32('IDAT' . $compressed));
 		
 		// IEND
 		$out .= pack('N', 0);
 		$out .= 'IEND';     
-		$out .= pack('N', 'IEND' .  crc32(null));
+		$out .= pack('N', crc32('IEND' . null));
 		 	
 		 
 		return $out;
