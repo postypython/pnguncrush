@@ -7,7 +7,7 @@ class PPngUncrush {
 	
 	private $_filePath;		
 	
-	public function __construct($_filePath)
+	public function __construct($path)
 	{
 		if ($path !== null) {
 			$this->_filePath = $path;
@@ -41,7 +41,7 @@ class PPngUncrush {
 	private function decode()
 	{
 			 	
-		$fh = fopen($this->_imagePath, 'r');
+		$fh = fopen($this->_filePath, 'r');
 				
 		$headerData = fread ($fh, 8);
 		
