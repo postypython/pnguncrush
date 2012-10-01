@@ -10,13 +10,13 @@ Sample Usage
 
 ### Conversion to string:
 
-	$decoder = new PPngUncrush('/tmp/crushed.png');
+	$decoder = new PPngUncrush('path/to/source/crushed.png');
 
-	$img = $decoder->decodeTo(PPngUncrush::DECODE_TO_STRING);
+	$img = $decoder->decode();
 	
 
 ### Conversion to file:
 
 	$decoder = new PPngUncrush('/path/to/source/crushed.png');
 
-	$decoder->decodeTo(PPngUncrush::DECODE_TO_FILE, '/path/to/destination/uncrushed.png);
+	$decoder->decode('/path/to/destination/uncrushed.png');
