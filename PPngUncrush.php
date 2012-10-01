@@ -1,9 +1,5 @@
 <?php
-class PPngUncrush {
-
-	const DECODE_TO_FILE = 0;
-	
-	const DECODE_TO_STRING = 1;
+class PPngUncrush {	
 	
 	private $_filePath;		
 	
@@ -14,23 +10,26 @@ class PPngUncrush {
 		}
 	}		
 	
-	public function decodeTo($dest, $path=null)
+	/**
+	 * Decodes optimized pngs
+	 * @param string $path
+	 * @return string $img or an epmty string if path was specified
+	 */
+	public function decode($path=null)
 	{
 		$img = $this->decode();
 		
-		if ($dest === PPngUncrush::DECODE_TO_STRING){
-		
+		if ($path !== null){
+			
+			file_put_contents($path, $img);
+			
+			return '';
+			
+		} else {
+			
 			return $img;
 			
-		} else if ($dest === PPngUncrush::DECODE_TO_FILE){
-			
-			if ($path !== null){
-				
-				file_put_contents($path, $img);
-				
-			}
-			
-		}
+		}				
 		
 	}
 	
